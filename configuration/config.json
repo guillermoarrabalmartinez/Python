@@ -1,0 +1,14 @@
+{
+    "SQL": {
+        "localhost_CONNECTION_STRING": "mssql+pyodbc://(localdb)\\localhost/test?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server",
+        "SUBDN748_CONNECTION_STRING": "mssql+pyodbc://SUBDN748/BubeTests?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server",
+        "allowed_ifexiststable_Actions": ["replace", "append"]
+    },
+    "Files": {
+        "PD1PFile": "PD1P_SS.csv",
+        "FolderPath": "C:\\Users\\GUILARRA\\Documents\\SQL\\BubeTests\\",
+        "allowed_filetypes": ["csv", "xlsx"],
+        "NettingNegative": "netting Negative at Counterparty_Deal level.xlsx",
+        "NettingPositive": "netting Positive at Counterparty_Deal level.xlsx"
+    }
+}
