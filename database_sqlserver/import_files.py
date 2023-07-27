@@ -1,7 +1,9 @@
 import pandas as pd
 
+
 class ImportFiles:
     """Class to manage the data import into the SQL Server database"""
+
     def __init__(self, filepath) -> None:
         self.filepath = filepath
 
@@ -16,5 +18,10 @@ class ImportFiles:
         :param str sheet_name: name of the Excel sheet to be analyzed
         :param int skip_rows: number of rows to skip in the header
         :param list[str] use_columns: array of columns to be extracted, none by default"""
-        df = pd.read_excel(self.filepath, sheet_name=sheet_name, skiprows=skip_rows, usecols=use_columns)
+        df = pd.read_excel(
+            self.filepath,
+            sheet_name=sheet_name,
+            skiprows=skip_rows,
+            usecols=use_columns,
+        )
         return df
