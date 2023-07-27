@@ -36,7 +36,7 @@ class dfTransformations:
                     "Portfolio Type": "PortfolioType",
                     "SAP Partner Type": "SAPPartnerType",
                     "Counterparty": "Counterparty",
-                    "ENDUR_ID": "EndurDealID",
+                    "ENDUR_ID_ORIG": "EndurDealID",
                     "Gross assets before balance sheet netting": "Netting1",
                     "Netting": "Netting2",
                     "Net assets, reported on the balance sheet": "Netting3",
@@ -46,6 +46,7 @@ class dfTransformations:
                     "Assets after recognition of the netting-potential": "Netting7",
                 }
             )
+            print(df.columns.tolist())
         else:
             df = df.rename(
                 columns={
@@ -53,7 +54,7 @@ class dfTransformations:
                     "Portfolio Type": "PortfolioType",
                     "SAP Partner Type": "SAPPartnerType",
                     "Counterparty": "Counterparty",
-                    "ENDUR_ID": "EndurDealID",
+                    "ENDUR_ID_ORIG": "EndurDealID",
                     "Gross liabilities before balance sheet netting": "Netting1",
                     "Netting": "Netting2",
                     "Net liabilities, reported on the balance sheet": "Netting3",
@@ -63,6 +64,7 @@ class dfTransformations:
                     "Liabilities after recognition of the netting-potential": "Netting7",
                 }
             )
+        return df
 
     def union_dataframes(self, df1, df2):
         """Perform a union of two dataframes

@@ -74,14 +74,12 @@ def join_netting_files_and_importsqlserver(
 
     # Unpack the reporting_dates array into two separate variables
     date1, date2 = reporting_dates
-
+    
     # Process the first excel file
     df1 = import_files1.read_excel_file("Sheet1")
     dfUtils1 = dfTransformations(df1)
     df1 = dfUtils1.df_netting_columnrenaming(
-    dfUtils1.df_addcolumn(df1, "ReportingDate", date1, "fixed value"), netting_type
-    )
-
+    dfUtils1.df_addcolumn(df1, "ReportingDate", date1, "fixed value"), netting_type)
 
     # Process the second excel file
     df2 = import_files2.read_excel_file("Sheet1")
