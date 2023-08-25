@@ -12,12 +12,13 @@ from sqlalchemy import types
 config = get_config()
 # Define instance parameters
 connection_string = config['SQL']['SUBDN748_CONNECTION_STRING']
-file = config["Files"]["NettingNeg31.03"]
-file2 = config["Files"]["NettingNeg28.02"]
+file = config["Files"]["NettingPos31.03"]
+file2 = config["Files"]["NettingPos28.02"]
 folderpath = config['Files']['FolderPath']
 allowed_filetypes = config['Files']['allowed_filetypes']
 schema = "QV"
-ifexists = "replace"  # 'append'
+ifexists = "append"  # 'append','replace'
+nettingtype = 'positive'
 table =  "Netting_PositiveNegative" 
 reporting_dates = ['2023-03-31', '2023-02-28']
 #os.path.splitext(file)[0]
@@ -67,6 +68,6 @@ join_netting_files_and_importsqlserver(
     schema,
     ifexists,
     reporting_dates,  
-    netting_type='negative',
+    netting_type=nettingtype,
     column_types=column_types_netting
 )

@@ -64,6 +64,7 @@ class dfTransformations:
                     "Liabilities after recognition of the netting-potential": "Netting7",
                 }
             )
+            print(df.columns.tolist())
         return df
 
     def union_dataframes(self, df1, df2):
